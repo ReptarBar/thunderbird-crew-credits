@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0",
+  "generated_at": "2025-08-24T00:00:00Z",
+  "project": "Thunderbird",
+  "sections": [
+    {
+      "title": "Directed by",
+      "role_key": "director",
+      "entries": [
+        {
+          "name": "Michael Ellis",
+          "handle": "ReptarReloaded"
+        }
+      ]
+    }
+  ]
+}
