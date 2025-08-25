@@ -1,0 +1,19 @@
+{
+  "title": "Thunderbird: The Motion Picture — Credits",
+  "sections": [
+    {"role": "Directed by", "names": ["Michael Ellis", "John Doe", "Jane Doe"]},
+    {"role": "Unit Directors", "names": ["Heather Ellsworth", "Wayne Mery", "John Doe", "Jane Doe"]},
+    {"role": "Executive Producers", "names": ["Thunderbird Donors & Supporters", "John Doe", "Jane Doe"]},
+    {"role": "Producers (Core Development)", "names": ["Thunderbird Core Developers", "John Doe", "Jane Doe"]},
+    {"role": "Writers (Localization)", "names": ["Weblate Localizers", "John Doe", "Jane Doe"]},
+    {"role": "Stunt Team (QA Testing)", "names": ["Bugzilla QA Contributors", "John Doe", "Jane Doe"]},
+    {"role": "Cinematography (UX & Design)", "names": ["UX & Design Contributors", "John Doe", "Jane Doe"]},
+    {"role": "Special Effects (Add-ons)", "names": ["Extension & Theme Creators", "John Doe", "Jane Doe"]},
+    {"role": "Script Supervisors (Documentation)", "names": ["Docs & Knowledge Base Writers", "John Doe", "Jane Doe"]},
+    {"role": "Casting & Coaching (Community Support)", "names": ["SUMO Helpers", "Forum Moderators", "Matrix Mentors", "John Doe", "Jane Doe"]},
+    {"role": "Projectionists (Release Engineering)", "names": ["Build & Release Engineers", "John Doe", "Jane Doe"]},
+    {"role": "Publicists (Marketing & Comms)", "names": ["Thunderbird Comms Team", "John Doe", "Jane Doe"]},
+    {"role": "Extras (Global Contributors)", "names": ["Our Worldwide Thunderbird Community", "John Doe", "Jane Doe"]}
+  ],
+  "end_line": "Thunderbird opening soon on a desktop near you."
+}

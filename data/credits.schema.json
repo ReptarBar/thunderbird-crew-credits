@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Thunderbird Contributor Credits Schema",
+  "type": "object",
+  "required": ["title", "sections", "end_line"],
+  "properties": {
+    "title": {"type": "string"},
+    "end_line": {"type": "string"},
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "names"],
+        "properties": {
+          "role": {"type": "string"},
+          "names": { "type": "array", "items": {"type": "string"} }
+        }
+      }
+    }
+  }
+}
