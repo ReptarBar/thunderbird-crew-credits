@@ -1,0 +1,57 @@
+name: Validate & Build Contributor Credits
+
+on:
+  schedule:
+    - cron: "0 15 1 * *" # Run monthly on the 1st at 15:00 UTC
+  workflow_dispatch: {}
+  pull_request:
+    paths:
+      - "data/credits.json"
+      - "data/credits.schema.json"
+      - ".github/workflows/credits-validate-and-build.yml"
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node (for ajv-cli)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install ajv-cli
+        run: npm i -g ajv-cli@5
+
+      - name: Validate data/credits.json against data/credits.schema.json
+        run: |
+          ajv validate \
+            -s data/credits.schema.json \
+            -d data/credits.json
+
+      - name: Generate CONTRIBUTORS.md from data/credits.json
+        run: |
+          TITLE=$(jq -r '.title' data/credits.json)
+          END_LINE=$(jq -r '.end_line' data/credits.json)
+
+          {
+            echo "# ${TITLE}"
+            echo
+            jq -r '
+              .sections[]
+              | "### \(.role)\n"
+              + ( .names | map("- " + .) | join("\n") )
+              + "\n"
+            ' data/credits.json
+            echo "**${END_LINE}**"
+          } > CONTRIBUTORS.md
+
+      - name: Auto-commit CONTRIBUTORS.md (if changed)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update CONTRIBUTORS.md from data/credits.json"
+          file_pattern: "CONTRIBUTORS.md"
+
